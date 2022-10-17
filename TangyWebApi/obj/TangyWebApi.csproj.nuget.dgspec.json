@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyWebApi\\TangyWebApi.csproj": {}
+  },
+  "projects": {
+    "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyWebApi\\TangyWebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyWebApi\\TangyWebApi.csproj",
+        "projectName": "TangyWebApi",
+        "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyWebApi\\TangyWebApi.csproj",
+        "packagesPath": "C:\\Users\\Dev2\\.nuget\\packages\\",
+        "outputPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyWebApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Dev2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+﻿@page "/parentComponent"
+
+<h3 class="text-success">Parent Child Relation</h3>
+<CascadingValue Value = "@MessageForGrandChild" Name="message">
+	<CascadingValue Value="@LuckyNumber" Name="luckynumber">
+<_ChildComponent @ref="_ChildComponent" title="This title is passed as parameter from Parent Component" OnButtonClick="ShowMessage" >
+	<ChildContent>Render fragement From Parent!</ChildContent> 
+	<DangerChildContent>Danger Content from render fragement</DangerChildContent> 
+</_ChildComponent>
+</CascadingValue>
+</CascadingValue>
+<p><b>@messageText</b></p>
+
+<_AnotherChildComponent InputAttributes = "InputAttributesFromParent"></_AnotherChildComponent>
+<div class='row'>
+	<button class="btn btn-success" @onclick="() => _ChildComponent.ToastrSuccess()">Show SweetAlert</button>
+</div>
+@code {
+
+	private _ChildComponent _ChildComponent;
+	public string MessageForGrandChild = "this message is from grand parent (ParentComponent) ";
+	public string LuckyNumber = "7";
+	public Dictionary<string, object> InputAttributesFromParent { get; set; } = new Dictionary<string, object>()
+	{
+		{"required", "required"},
+		{"placeholder", "Enter Name From Parent"},
+		{"maxlength", 5}
+	};
+
+	public string messageText = string.Empty;
+	private void ShowMessage()
+	{
+		messageText = "Button work";
+	}
+}

@@ -1,0 +1,144 @@
+﻿@page "/product"
+@using Tangy_Common
+
+@inject IProductRepository _productRepository
+@inject IJSRuntime _jsRuntime
+@inject IFileUpload _fileUpload
+@inject NavigationManager _navigationManager
+
+<_DeleteConfirmation IsParentComponentProcessing="IsLoading" OnButtonClick="ConfirmDeleteClick"></_DeleteConfirmation>
+<div class="row mt-4">
+	<div class="col-6">
+		<h4 class="card-title text-info">Product</h4>
+	</div>
+	<div class="col-4 offset-2">
+		<a href="products/create" class="btn btn-primary form-control float-end" style="width:200px">Add new Product</a>
+	</div>
+	<div class="col-12 my-2">
+		@if (Products.Any())
+		{
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Shop Favorites</th>
+						<th>Customer Favorites</th>
+						<th>Category</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Products)
+					{
+						<tr>
+							<td>
+								@item.Name
+							</td>
+							<td>
+								<input type="checkbox" disabled checked="@item.ShopFavorites" />
+							</td>
+							<td>
+								<input type="checkbox" disabled checked="@item.CustomerFavorites" />
+							</td>
+							@if (item.Category == null)
+							{
+								<td>
+
+								</td>
+							}
+							else
+							{
+								<td>@item.Category.Name</td>
+							}
+
+							
+							<td>
+								<NavLink href="@($"products/edit/{item.Id}")" class="btn btn-primary">Edit</NavLink>
+								<NavLink href="@($"products/price/{item.Id}")" class="btn btn-success">Price</NavLink>
+								<button class="btn btn-danger" @onclick="()=>HandleDelete(item.Id)">Delete</button>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+		else
+		{
+			@if (IsLoading)
+			{
+				<div class="text-center ">
+					<img src="/images/loading.gif" />
+				</div>
+
+			}
+			else
+			{
+				<p>No records found.</p>
+			}
+		}
+	</div>
+</div>
+
+@code {
+
+	private IEnumerable<ProductDTO> Products { get; set; } = new List<ProductDTO>();
+	private bool IsLoading { get; set; } = true;
+	private int DeleteProductId { get; set; } = 0;
+	[CascadingParameter]
+	public Task<AuthenticationState> AuthenticationState { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+		var authState = await AuthenticationState;
+		if (!authState.User.Identity.IsAuthenticated)
+		{
+			var uri = new Uri(_navigationManager.Uri);
+			_navigationManager.NavigateTo($"/identity/account/login?returnUrl={uri.LocalPath}",forceLoad:true);
+		}
+		else
+		{
+			if (!authState.User.IsInRole(SD.Role_Admin))
+			{
+				_navigationManager.NavigateTo("/ErrorPage");
+			}
+
+		}
+	}
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			await LoadProducts();
+		}
+	}
+	
+
+	private async Task LoadProducts()
+	{
+		IsLoading = true;
+		StateHasChanged();
+		Products = await _productRepository.GetAll();
+		IsLoading = false;
+		StateHasChanged();
+	}
+	private async Task HandleDelete(int id)
+	{
+		DeleteProductId = id;
+		await _jsRuntime.Modal(true);
+	}
+	public async Task ConfirmDeleteClick(bool isConfirmed)
+	{
+		IsLoading = true;
+		if (isConfirmed && DeleteProductId != 0)
+		{
+			ProductDTO product = await _productRepository.Get(DeleteProductId);
+			await _productRepository.Delete(DeleteProductId);
+			_fileUpload.DeleteFile(product.ImageUrl);
+			await LoadProducts();
+			await _jsRuntime.Modal(false);
+			await _jsRuntime.ToastrSuccess("Delete Successfully");
+		}
+		IsLoading = false;
+	}
+}

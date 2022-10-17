@@ -1,0 +1,12 @@
+/.vs
+/TangyWebApi/bin
+/TangyWeb_Server/bin
+/TangyWeb_Client/bin
+/TangyModels/bin
+/TangyModels/obj
+/Tangy_DataAccess/bin
+/Tangy_DataAccess/obj
+/Tangy_Common/bin
+/Tangy_Common/obj
+/Tangy_Business/bin
+/Tangy_Business/obj

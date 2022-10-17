@@ -1,0 +1,46 @@
+﻿
+<div class="bg-light border p-2 col-5" @onclick = "(args) => LastSelectedProeduct(args, Products.Name)">
+<h4 class="text-secondary">Product - @Products.Id</h4>
+				Add to Favorite
+<input type="checkbox" @onchange="FavoriteUpdate" />
+<br />
+<br />
+				Name - @Products.Name
+<br />
+RF from Parent- @FirstFragment    @SecondFragment
+	<br /><br />
+				Show Properties:
+			
+<input type="checkbox" @bind-value="@Products.IsActive" checked="@(Products.IsActive ? "checked" : null)" />
+@if (Products.IsActive)
+{
+	@foreach (var tempProp in Products.ProductProperties)
+	{
+		<p>@tempProp.Key  -  @tempProp.Value</p>
+	}
+}
+	<_EditDeleteButton IsActive = "@Products.IsActive"></_EditDeleteButton>
+</div>
+
+@code {
+	[Parameter]
+	public TangyModels.LearnBlazorModels.DemoProduct Products { get; set; }
+	[Parameter]
+	public EventCallback<bool> OnFavoriteUpdate { get; set; }
+
+	[Parameter]
+	public EventCallback<string>OnLastSelectedProduct{ get; set; }
+
+	[Parameter]
+	public RenderFragment FirstFragment { get; set; }
+	[Parameter]
+	public RenderFragment SecondFragment { get; set; }
+	private async Task FavoriteUpdate(Microsoft.AspNetCore.Components.ChangeEventArgs e)
+	{
+		await OnFavoriteUpdate.InvokeAsync((bool)e.Value);
+	}
+	private async Task LastSelectedProeduct(MouseEventArgs e, string name)
+	{
+		await OnLastSelectedProduct.InvokeAsync(name);
+	}
+}

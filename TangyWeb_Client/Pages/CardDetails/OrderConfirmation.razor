@@ -1,0 +1,94 @@
+﻿@page "/OrderConfirmation"
+@inject ILocalStorageService _localStorage
+@inject IOrderService _orderService
+@inject ICardService _cardService
+@inject NavigationManager _navigationManager
+
+<div class="container">
+	@if (IsProcessing)
+	{
+		<div style="position:fixed;top:50%;left:50%;margin-top:-50px;margin-left:-100px;">
+			<img src="images/ajax-loader.gif" />
+		</div>
+	}
+	else
+	{
+		@if(Order == null)
+		{
+				<div style="position:fixed;top:50%;left:50%;margin-top:-50px;margin-left:-100px; ">
+			<img src="images/nodatafound.png" />
+			<a href="/">&larr;Back To Home</a>
+		</div>
+
+		}
+		else
+		{
+			@if (Order.OrderHeader.Status == SD.Status_Confirmed)
+		{
+			<div class="row mt-4 pt-4">
+				<div class="col-10 offset-1 text-center">
+					<h2 class="text-warning">Order Confirmed</h2>
+					<p>Your order has been placed successfully with order id : @Order.OrderHeader.Id</p>
+				</div>
+				<div class="col-8 offset-2">
+					<img src="/images//confirmation.jpg" width="100%" style="border-radius:30px" />
+				</div>
+			</div>
+
+		}
+		else
+		{
+			<div class="row mt-4 pt-4">
+				<div class="col-10 offset-1 text-center">
+					@if(orderStatus == SD.Status_Confirmed)
+					{
+						<h2 class="text-success">@orderStatus</h2>
+						<p>Your order is placed your Order ID: @Order.OrderHeader.Id </p>
+					}
+					else
+					{
+						<h2 class="text-danger">@orderStatus</h2>
+						<p> Your order had payment issue please contact us with Order ID: @Order.OrderHeader.Id</p>
+					}
+				
+					
+				</div>
+				<div class="col-8 offset-2">
+					<img src="/images/confirmation.jpg" width="100%" style="border-radius:30px;" />
+					<a href="/" > <button class="btn btn-secondary">Back to Home</button></a>	
+				</div>
+				
+			</div>
+		}
+		}
+		
+	}
+</div>
+
+@code {
+	private bool IsProcessing { get; set; } = false;
+	private OrderDTO Order { get; set; }
+	private string orderStatus { get; set; } =  "Order Issue!";
+	protected override async Task OnInitializedAsync()
+	{
+		IsProcessing = true;
+
+
+		Order = await _localStorage.GetItemAsync<OrderDTO>(SD.Local_OrderDetails);
+		if(Order != null)
+		{
+			var updatesOrder = await _orderService.MakePaymentSuccessful(Order.OrderHeader);
+
+			if (updatesOrder.Status == SD.Status_Confirmed)
+			{
+				orderStatus = updatesOrder.Status;
+				await _localStorage.RemoveItemAsync(SD.Local_OrderDetails);
+				await _localStorage.RemoveItemAsync(SD.ShoppingCart);
+				await _cardService.UpdateCart();
+			}			
+		}
+	
+
+		IsProcessing = false;
+	}
+}

@@ -1,0 +1,75 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = browser
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = true
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = TangyWeb_Client
+build_property.RootNamespace = TangyWeb_Client
+build_property.ProjectDir = g:\saurabh\PROJECT\Blazor\Demo\Tangy\TangyWeb_Client\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = g:\saurabh\PROJECT\Blazor\Demo\Tangy\TangyWeb_Client
+build_property._RazorSourceGeneratorDebug = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Pages/Authentication/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Pages/Authentication/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cTG9nb3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Pages/Authentication/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cUmVkaXJlY3RUb0xvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Pages/Authentication/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Pages/CardDetails/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZERldGFpbHNcQ2FydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Pages/CardDetails/OrderConfirmation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZERldGFpbHNcT3JkZXJDb25maXJtYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Pages/CardDetails/Summary.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZERldGFpbHNcU3VtbWFyeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Pages/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-nkyvcfwaqa
+
+[g:/saurabh/PROJECT/Blazor/Demo/Tangy/TangyWeb_Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-dn35wejbyp

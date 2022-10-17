@@ -1,0 +1,70 @@
+﻿@page "/demoproduct"
+<h2 class= "text-primary">DemoProduct</h2>
+<p>Favourites Total : @SelectFavouriteCount</p>
+<p>Last Selected Product : @LastSelectedProductName</p>
+<div class="border p-3 mt-2" style="background-color:azure">
+	<div class="row">
+		@foreach (var prod in Products)
+		{
+		
+			<_Card Products = "@prod" OnFavoriteUpdate="FavouriteCountUpdate" OnLastSelectedProduct="UpdateLastSelectedProduct">
+					<FirstFragment>#1</FirstFragment>
+	<SecondFragment>#2</SecondFragment>	
+			</_Card>
+				
+		}
+	</div>
+</div>
+
+
+@code {
+	List<TangyModels.LearnBlazorModels.DemoProduct> Products = new();
+
+	private int SelectFavouriteCount { get; set; } = 0;
+	private string LastSelectedProductName { get; set; }
+	protected override void OnInitialized()
+	{
+		Products.Add(new()
+			{
+				Id = 1,
+				Name = "Midnight Blaze",
+				IsActive = false,
+				Price = 100,
+				ProductProperties = new()
+				{
+					new DemoProductProp { Id = 1, Key = "Flavor", Value = "Rose" },
+					new DemoProductProp { Id = 2, Key = "Size", Value = "20oz" },
+					new DemoProductProp { Id = 3, Key = "Color", Value = "Purple" }
+				}
+			});
+		Products.Add(new()
+			{
+				Id = 2,
+				Name = "Blossom Lily",
+				Price = 100,
+				IsActive = false,
+				ProductProperties = new()
+				{
+					new DemoProductProp { Id = 1, Key = "Flavor", Value = "Lily" },
+					new DemoProductProp { Id = 2, Key = "Size", Value = "18oz" },
+					new DemoProductProp { Id = 3, Key = "Color", Value = "White" }
+				}
+			});
+	}
+	protected void FavouriteCountUpdate(bool isSelected)
+	{
+		if (isSelected)
+		{
+			SelectFavouriteCount++;
+		}
+		else
+		{
+			SelectFavouriteCount--;
+		}
+	}
+	protected void UpdateLastSelectedProduct(string productName)
+	{
+		LastSelectedProductName = productName;	
+	}
+
+}

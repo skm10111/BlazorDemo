@@ -1,0 +1,96 @@
+﻿@page "/lifeCycle"
+@using System.Threading
+
+<h3>LifeCycle</h3>
+
+<p role="status">Current count: @currentCount</p>
+<p class="text-info">Total Function Call: @TotalFunctionCall</p>
+<p class= "text-danger" >Counter :@Count</p>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<br />
+
+<br /><button class="btn btn-primary" @onclick=StartCountdown>Start Countdown</button>
+<hr />
+@foreach(var item in EventType)
+{
+	@item
+	<hr />
+}
+<hr />
+<div class="border">
+	<_LifeCycleChild CounterValue="@currentCount"></_LifeCycleChild>
+</div>
+
+@code {
+
+	private int currentCount = 0;
+	private int Count { get; set; } = 5;
+	private int TotalFunctionCall = 0; 
+	private void IncrementCount()
+	{
+		currentCount++;
+	}
+	List<string> EventType = new List<string>();
+
+
+	protected override void OnInitialized()
+	{
+		EventType.Add("OnInitialized is called");
+		TotalFunctionCall++;
+	}
+	protected override async Task OnInitializedAsync()
+	{
+		EventType.Add("OnInitializedAsync is called");
+		TotalFunctionCall++;
+	}
+
+	protected override void OnParametersSet()
+	{
+		EventType.Add("OnParametersSet is called");
+		TotalFunctionCall++;
+	}
+	protected override async Task OnParametersSetAsync()
+	{
+		EventType.Add("OnParametersSetAsync is called");
+		TotalFunctionCall++;
+
+	}
+	protected override void OnAfterRender(bool firstRender)
+	{
+		if (firstRender)
+		{
+			currentCount = 111;
+		}
+		else
+		{
+			currentCount = 999;
+		}
+		EventType.Add("OnAfterRender is called");
+		TotalFunctionCall++;
+	}
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		EventType.Add("OnAfterRenderAsync is called");
+		TotalFunctionCall++;
+	}
+	protected override bool ShouldRender()
+	{
+		EventType.Add("ShouldRender is called");
+		TotalFunctionCall++;
+		return true;
+	}
+
+	void StartCountdown()
+	{
+		var timer = new Timer(TimeCallback, null, 1000, 1000);
+	}
+	void TimeCallback(object state)
+	{
+		if(Count > 0)
+		{
+			Count --;
+			InvokeAsync(StateHasChanged);
+		}
+	}
+
+}

@@ -1,0 +1,393 @@
+{
+  "format": 1,
+  "restore": {
+    "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyWeb_Server\\TangyWeb_Server.csproj": {}
+  },
+  "projects": {
+    "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyModels\\TangyModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyModels\\TangyModels.csproj",
+        "projectName": "TangyModels",
+        "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyModels\\TangyModels.csproj",
+        "packagesPath": "C:\\Users\\Dev2\\.nuget\\packages\\",
+        "outputPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Dev2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_DataAccess\\Tangy_DataAccess.csproj": {
+                "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_DataAccess\\Tangy_DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyWeb_Server\\TangyWeb_Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyWeb_Server\\TangyWeb_Server.csproj",
+        "projectName": "TangyWeb_Server",
+        "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyWeb_Server\\TangyWeb_Server.csproj",
+        "packagesPath": "C:\\Users\\Dev2\\.nuget\\packages\\",
+        "outputPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyWeb_Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Dev2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyModels\\TangyModels.csproj": {
+                "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyModels\\TangyModels.csproj"
+              },
+              "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Business\\Tangy_Business.csproj": {
+                "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Business\\Tangy_Business.csproj"
+              },
+              "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_DataAccess\\Tangy_DataAccess.csproj": {
+                "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_DataAccess\\Tangy_DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Radzen.Blazor": {
+              "target": "Package",
+              "version": "[4.1.8, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "Syncfusion.Blazor.Grid": {
+              "target": "Package",
+              "version": "[20.3.0.49, )"
+            },
+            "Syncfusion.Blazor.RichTextEditor": {
+              "target": "Package",
+              "version": "[20.3.0.49, )"
+            },
+            "Syncfusion.Blazor.Themes": {
+              "target": "Package",
+              "version": "[20.3.0.49, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Business\\Tangy_Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Business\\Tangy_Business.csproj",
+        "projectName": "Tangy_Business",
+        "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Business\\Tangy_Business.csproj",
+        "packagesPath": "C:\\Users\\Dev2\\.nuget\\packages\\",
+        "outputPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Dev2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyModels\\TangyModels.csproj": {
+                "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\TangyModels\\TangyModels.csproj"
+              },
+              "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Common\\Tangy_Common.csproj": {
+                "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Common\\Tangy_Common.csproj"
+              },
+              "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_DataAccess\\Tangy_DataAccess.csproj": {
+                "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_DataAccess\\Tangy_DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[40.13.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Common\\Tangy_Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Common\\Tangy_Common.csproj",
+        "projectName": "Tangy_Common",
+        "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Common\\Tangy_Common.csproj",
+        "packagesPath": "C:\\Users\\Dev2\\.nuget\\packages\\",
+        "outputPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Dev2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_DataAccess\\Tangy_DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_DataAccess\\Tangy_DataAccess.csproj",
+        "projectName": "Tangy_DataAccess",
+        "projectPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_DataAccess\\Tangy_DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Dev2\\.nuget\\packages\\",
+        "outputPath": "G:\\saurabh\\PROJECT\\Blazor\\Demo\\Tangy\\Tangy_DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Dev2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

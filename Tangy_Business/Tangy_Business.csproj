@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TangyModels\TangyModels.csproj" />
+    <ProjectReference Include="..\Tangy_Common\Tangy_Common.csproj" />
+    <ProjectReference Include="..\Tangy_DataAccess\Tangy_DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="Stripe.net" Version="40.13.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,100 @@
+﻿@page "/category"
+@using Tangy_Common
+
+@inject ICategoryRepository _categoryRepository
+@inject IJSRuntime _jsRuntime
+@attribute [Authorize(Roles = SD.Role_Admin)]
+
+<_DeleteConfirmation IsParentComponentProcessing="IsLoading" OnButtonClick="ConfirmDeleteClick"></_DeleteConfirmation>
+<div class="row mt-4">
+	<div class="col-6">
+		<h4 class="card-title text-info">Category</h4>
+	</div>
+	<div class="col-4 offset-2">
+		<a href="category/create" class="btn btn-primary form-control float-end" style="width:200px">Add new Category</a>
+	</div>
+	<div class="col-12 my-2">
+		@if (Categories.Any())
+		{
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Categories)
+					{
+						<tr>
+							<td>
+								@item.Name
+							</td>
+							<td>
+								<NavLink href="@($"category/edit/{item.Id}")" class="btn btn-primary">Edit</NavLink>
+								<button class="btn btn-danger" @onclick="()=>HandleDelete(item.Id)">Delete</button>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+		else
+		{
+			@if (IsLoading)
+			{
+				<div class="text-center ">
+					<img src="/images/loading.gif" />
+				</div>
+
+			}
+			else
+			{
+				<p>No records found.</p>
+			}
+		}
+	</div>
+</div>
+
+@code {
+
+	private IEnumerable<CategoryDTO> Categories { get; set; } = new List<CategoryDTO>();
+	private bool IsLoading { get; set; }
+	private int DeleteCategoryId { get; set; } = 0;
+	//protected override async Task OnInitializedAsync()
+	//{
+	//	await Task.Run(LoadCategories);
+	//}
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			await LoadCategories();
+		}
+	}
+	private async Task LoadCategories()
+	{
+		IsLoading = true;
+		StateHasChanged();
+		Categories = await _categoryRepository.GetAll();
+		IsLoading = false;
+		StateHasChanged();
+	}
+	private async Task HandleDelete(int id)
+	{
+		DeleteCategoryId = id;
+		await _jsRuntime.Modal(true);
+	}
+	public async Task ConfirmDeleteClick(bool isConfirmed)
+	{
+		IsLoading = true;
+		if(isConfirmed && DeleteCategoryId != 0)
+		{			
+			await _categoryRepository.Delete(DeleteCategoryId);
+			await LoadCategories();
+			await _jsRuntime.Modal(false);
+			await _jsRuntime.ToastrSuccess("Delete Successfully");
+		}
+		IsLoading = false;
+	}
+}
